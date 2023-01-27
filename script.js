@@ -2,8 +2,9 @@ const arr = [];
 
 function insert(num) {
   arr.push(num);
-  let str = arr.join(" ")
+  let str = arr.join("");
   document.querySelector(".textview").value = str;
+  document.querySelector(".textview").style.textAlign = "right";
 }
 
 function equals() {
@@ -16,8 +17,7 @@ function equals() {
       rhs = arr.slice(i + 1, arr.length);
       rhs = rhs.join("");
       rhs = parseFloat(rhs);
-      if (arr[i] == "+")
-        document.querySelector(".textview").value = lhs + rhs;
+      if (arr[i] == "+") document.querySelector(".textview").value = lhs + rhs;
       else if (arr[i] == "-")
         document.querySelector(".textview").value = lhs - rhs;
       else if (arr[i] == "*")
@@ -37,6 +37,7 @@ function clean() {
 
 function back() {
   arr.pop();
-  let str = arr.join(" ")
+  let str = arr.join("");
   document.querySelector(".textview").value = str;
+  document.querySelector(".textview").style.textAlign = "right";
 }
